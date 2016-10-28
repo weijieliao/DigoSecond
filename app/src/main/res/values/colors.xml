@@ -3,4 +3,9 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <!--标题栏底色-->
+    <color name="bg_top_bar">#F8F8F8</color>
+    <!--标题栏标题颜色-->
+    <color name="txt_top_bar">#333333</color>
 </resources>

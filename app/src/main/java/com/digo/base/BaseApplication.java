@@ -26,7 +26,7 @@ public class BaseApplication extends Application{
 
     }
 
-    public static BaseApplication getmApplication(){
+    public static BaseApplication getApplication(){
         return mApplication;
     }
 

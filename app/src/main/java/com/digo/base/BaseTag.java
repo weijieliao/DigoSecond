@@ -6,4 +6,9 @@ package com.digo.base;
  */
 
 public class BaseTag {
+
+    /**
+     * TODO 这个类不要用，存放常量在 utils/constants 包下
+     */
+
 }

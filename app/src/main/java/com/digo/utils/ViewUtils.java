@@ -24,7 +24,7 @@ public class ViewUtils {
      * @return
      */
     public static View inflate(int id) {
-        return LayoutInflater.from(BaseApplication.getmApplication()).inflate(id,
+        return LayoutInflater.from(BaseApplication.getApplication()).inflate(id,
                 null);
     }
 
@@ -47,7 +47,7 @@ public class ViewUtils {
      * @return
      */
     public static View inflateWithParent(ViewGroup parent, int id) {
-        return LayoutInflater.from(BaseApplication.getmApplication()).inflate(id, parent);
+        return LayoutInflater.from(BaseApplication.getApplication()).inflate(id, parent);
     }
 
     /**

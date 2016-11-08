@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">DigoSecond</string>
     <string name="title_activity_base">BaseActivity</string>
+
+    <string name="text_square">广场</string>
+    <string name="text_my">我的</string>
 </resources>

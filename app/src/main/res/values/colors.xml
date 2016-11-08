@@ -8,4 +8,9 @@
     <color name="bg_top_bar">#F8F8F8</color>
     <!--标题栏标题颜色-->
     <color name="txt_top_bar">#333333</color>
+
+    <!-- 黑色 -->
+    <color name="black">#000000</color>
+    <!-- 橙色 -->
+    <color name="orange">#FF8800</color>
 </resources>

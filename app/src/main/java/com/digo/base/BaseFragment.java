@@ -40,7 +40,7 @@ public abstract class BaseFragment<T extends BasePresenterInfc> extends Fragment
                              @Nullable Bundle savedInstanceState) {
         isFirstLoad = true;
         mHandler = new Handler();
-        mContentView = View.inflate(getContext(),setContentView(),null);
+        mContentView = View.inflate(getContext(),getContentViewResId(),null);
         return mContentView;
     }
 
@@ -55,6 +55,7 @@ public abstract class BaseFragment<T extends BasePresenterInfc> extends Fragment
             public void run() {
                 initView();
                 initData();
+                initEvent() ;
                 if (mPresenter!=null){
                     //将Fragment的生命周期与Presenter同步
                     mPresenter.onCreate();
@@ -110,13 +111,15 @@ public abstract class BaseFragment<T extends BasePresenterInfc> extends Fragment
         }
     }
 
-    public abstract int setContentView();
+    public abstract int getContentViewResId();
 
     protected abstract BasePresenterInfc getPresenter();
 
+    public abstract void initData();
+
     public abstract void initView();
 
-    public abstract void initData();
+    public abstract void initEvent();
 
     public abstract boolean isLazyLoad();
 

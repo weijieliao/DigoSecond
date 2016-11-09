@@ -4,4 +4,8 @@
 
     <string name="text_square">广场</string>
     <string name="text_my">我的</string>
+    <string name="text_task">任务</string>
+    <string name="text_topic">话题</string>
+    <string name="text_lease">租借</string>
+    <string name="text_search">搜索</string>
 </resources>

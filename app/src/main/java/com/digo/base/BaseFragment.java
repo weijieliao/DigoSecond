@@ -53,8 +53,8 @@ public abstract class BaseFragment<T extends BasePresenterInfc> extends Fragment
         mLoadRunnable = new Runnable() {
             @Override
             public void run() {
-                initView();
                 initData();
+                initView();
                 initEvent() ;
                 if (mPresenter!=null){
                     //将Fragment的生命周期与Presenter同步

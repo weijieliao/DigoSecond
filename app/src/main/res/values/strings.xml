@@ -8,4 +8,7 @@
     <string name="text_topic">话题</string>
     <string name="text_lease">租借</string>
     <string name="text_search">搜索</string>
+    <string name="text_have_no_task">暂无任务</string>
+    <string name="text_publish_task">发布任务</string>
+    <string name="text_load_more">加载更多</string>
 </resources>

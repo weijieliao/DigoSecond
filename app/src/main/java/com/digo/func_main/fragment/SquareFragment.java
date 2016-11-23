@@ -125,6 +125,8 @@ public class SquareFragment extends BaseFragment<SquareFrgPresenter> implements 
                 return frgList.size() ;
             }
         } ;
+        //设置缓存个数
+        vpContent.setOffscreenPageLimit( 2 ) ;
         vpContent.setAdapter( frgAdapter ) ;
         vpContent.addOnPageChangeListener( this ) ;
 

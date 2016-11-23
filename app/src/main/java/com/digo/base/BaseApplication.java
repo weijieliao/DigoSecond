@@ -3,6 +3,7 @@ package com.digo.base;
 import android.app.Application;
 
 import com.digo.utils.LogUtil;
+import com.facebook.drawee.backends.pipeline.Fresco;
 
 /**
  * Base Application
@@ -23,6 +24,8 @@ public class BaseApplication extends Application{
 
         //开启log日志输出
         LogUtil.setIsOutput( true ) ;
+        //初始化fresco
+        Fresco.initialize(this);
 
     }
 

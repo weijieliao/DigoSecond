@@ -47,6 +47,7 @@ public abstract class RequstCallback<T> extends Subscriber<T> implements
 
     @Override
     public void onNext(T object) {
+        Log.e("TAG","object的值为："+object.toString());
         if (object != null) {
             Log.e("TAG", "load success");
         } else {

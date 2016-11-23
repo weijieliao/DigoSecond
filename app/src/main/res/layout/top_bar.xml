@@ -2,7 +2,7 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="45dp"
+    android:layout_height="match_parent"
     android:background="@color/bg_top_bar">
 
     <ImageView
@@ -11,13 +11,15 @@
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_marginLeft="@dimen/dp_10"
-        android:src="@mipmap/global_back"/>
+        android:paddingTop="20dp"
+        android:src="@drawable/global_back"/>
 
     <TextView
         android:id="@+id/top_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="@dimen/sp_18"
+        android:paddingTop="20dp"
         android:layout_centerInParent="true"
         android:text="标题"
         android:textColor="@color/txt_top_bar"/>

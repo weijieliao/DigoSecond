@@ -5,7 +5,7 @@
     <color name="colorAccent">#FF4081</color>
 
     <!--标题栏底色-->
-    <color name="bg_top_bar">#F8F8F8</color>
+    <color name="bg_top_bar">#e9e9e9</color>
     <!--标题栏标题颜色-->
     <color name="txt_top_bar">#333333</color>
 
@@ -13,4 +13,31 @@
     <color name="black">#000000</color>
     <!-- 橙色 -->
     <color name="orange">#FF8800</color>
+    <!--inhere背景色-->
+    <color name="bg_inhere">#D8D8D8</color>
+    <!--发布界面的背景颜色-->
+    <color name="bg_publish">#EBEBEB</color>
+    <!--item点击时的颜色-->
+    <color name="bg_item_press">#EBEBEB</color>
+    <!--add主界面背景色-->
+    <color name="bg_add">#ffffffff</color>
+    <!--inhere字体颜色-->
+    <color name="text_inhere">#222222</color>
+    <!--字体颜色-->
+    <color name="text_color_666">#666666</color>
+    <!--hint的颜色-->
+    <color name="et_hint">#999999</color>
+    <!--发布内容按钮字体颜色-->
+    <color name="text_publish">#FF5C00</color>
+
+    <!--pickerView所需要用到的color-->
+    <color name="pickerview_timebtn_nor">#057dff</color>
+    <color name="pickerview_timebtn_pre">#c2daf5</color>
+    <color name="pickerview_bg_topbar">#f5f5f5</color>
+    <color name="pickerview_topbar_title">#000000</color>
+    <color name="pickerview_wheelview_textcolor_out">#a8a8a8</color>
+    <color name="pickerview_wheelview_textcolor_center">#2a2a2a</color>
+    <color name="pickerview_wheelview_textcolor_divider">#d5d5d5</color>
+    <!--覆盖颜色-->
+    <color name="bgColor_overlay">#60000000</color>
 </resources>

@@ -14,4 +14,30 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
 
+    <!--底部弹出框的style-->
+    <style name="bottomDialogStyle" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <!-- 边框 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsTranslucent">false</item>
+        <!-- 半透明 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!-- 与下面的属性配合使用 调整透明度0~1  0.5为半透明 -->
+        <item name="android:backgroundDimAmount">0.5</item>
+        <item name="android:windowNoTitle">true</item>
+        <!-- 无标题 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- 添加此属性才能布满屏幕宽度   ？？ -->
+        <!-- 添加此属性才能布满屏幕宽度？ -->
+        <item name="android:windowAnimationStyle">@style/bottomDialogAnim</item>
+    </style>
+
+    <style name="bottomDialogAnim" parent="android:Animation">
+        <item name="@android:windowEnterAnimation">@anim/bottom_dialog_enter
+        </item>
+        <item name="@android:windowExitAnimation">@anim/bottom_dialog_exit
+        </item>
+    </style>
+
 </resources>

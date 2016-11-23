@@ -4,4 +4,35 @@
 
     <string name="text_square">广场</string>
     <string name="text_my">我的</string>
+    <string name="str_opinion_task">任务</string>
+    <string name="str_opinion_topic">话题</string>
+    <string name="str_opinion_loan">租借</string>
+    <string name="str_publish_task">发布任务</string>
+    <string name="str_task_title">任务标题：</string>
+    <string name="str_title_hint">给你的任务起个名吧～</string>
+    <string name="str_start_time">开始时间：</string>
+    <string name="str_end_time">结束时间：</string>
+    <string name="str_task_address">任务地点：</string>
+    <string name="str_task_describtion">任务描述：</string>
+    <string name="str_topic_title">求约标题：</string>
+    <string name="str_topic_perple">求约人群</string>
+    <string name="str_topic_address">求约地点：</string>
+    <string name="str_relative_photo">相关图片：</string>
+    <string name="str_topic_description">约会描述</string>
+    <string name="str_publish_topic">发布话题</string>
+    <string name="str_title_lesea">租借标题：</string>
+    <string name="str_zu_or_jie">租 / 借：</string>
+    <string name="str_lesea_fee">租借费用：</string>
+    <string name="str_lesea_description">租借描述：</string>
+    <string name="str_publish_lesea">发布租借</string>
+
+    <!--pickerView所需要用到的字符串-->
+    <string name="pickerview_cancel">取消</string>
+    <string name="pickerview_submit">确定</string>
+    <string name="pickerview_year">年</string>
+    <string name="pickerview_month">月</string>
+    <string name="pickerview_day">日</string>
+    <string name="pickerview_hours">时</string>
+    <string name="pickerview_minutes">分</string>
+    <string name="pickerview_seconds">秒</string>
 </resources>

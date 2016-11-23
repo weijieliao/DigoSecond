@@ -14,7 +14,7 @@ import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 public class HttpManager {
 
     //请求地址
-    private final static String baseUrl = "";
+    private final static String baseUrl = "http://139.224.72.114/";
 
     //定义Retrofit对象
     private static Retrofit mRetrofit;
@@ -25,8 +25,8 @@ public class HttpManager {
 
     /**
      * 初始化OkHttpClient
-     *
-     * @param builder
+     * <p>
+     *  @param builder
      */
     public static void initOkHttpClient(OkHttpClient.Builder builder) {
         okHttpClient = builder.connectTimeout(30, TimeUnit.SECONDS).readTimeout(30,
@@ -37,7 +37,8 @@ public class HttpManager {
         httpService = mRetrofit.create(HttpService.class);
     }
 
-    public static HttpService getService(){
+
+    public static HttpService getService() {
         return httpService;
     }
 }

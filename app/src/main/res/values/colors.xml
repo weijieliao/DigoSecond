@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimaryDark">#bababa</color>
     <color name="colorAccent">#FF4081</color>
 
     <!--标题栏底色-->
@@ -11,6 +11,8 @@
 
     <!-- 黑色 -->
     <color name="black">#000000</color>
+    <!-- 白色 -->
+    <color name="white">#ffffff</color>
     <!-- 橙色 -->
     <color name="orange">#FF8800</color>
     <!--inhere背景色-->
@@ -40,4 +42,12 @@
     <color name="pickerview_wheelview_textcolor_divider">#d5d5d5</color>
     <!--覆盖颜色-->
     <color name="bgColor_overlay">#60000000</color>
+    <!--<color name="orange">#fc5d20</color>-->
+    <!-- 浅灰 -->
+    <color name="lightGray">#e9e9e9</color>
+    <!-- 灰色 -->
+    <color name="gray">#dadada</color>
+    <!-- 灰色 -->
+    <color name="darkGray">#878787</color>
+
 </resources>

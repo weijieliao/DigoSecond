@@ -2,6 +2,7 @@ package com.digo.fun_add.activity;
 
 import android.content.Context;
 import android.os.Build;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
@@ -11,7 +12,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
+import com.digo.adapter.PublishTaskUploadPhotoAdapter;
 import com.digo.base.BaseActivity;
 import com.digo.base.BasePresenterInfc;
 import com.digo.fun_add.model.PublishTaskModel;
@@ -49,6 +52,9 @@ public class PublishTaskActivity extends BaseActivity<PublishTaskPresenter> impl
     //RecycleView
     @Bind(R.id.recycleview_publish_task)
     RecyclerView mRecycleView;
+    //"添加图片"标签TextView
+    @Bind(R.id.tv_publish_task_add_photo)
+    TextView mAddPhotoTextView;
     //定义"时间"选择器
     private TimePickerView mTimePickerView;
     //定义"添加图片"底部弹出框
@@ -57,6 +63,14 @@ public class PublishTaskActivity extends BaseActivity<PublishTaskPresenter> impl
     private ArrayList<String> mDialogList = new ArrayList<>();
     //定义集合，用于保存选中的图片
     private List<PhotoInfo> mPhotoList = new ArrayList<>();
+    //定义适配器对象
+    private PublishTaskUploadPhotoAdapter mAdapter;
+    //定义"操作图片"底部弹出框
+    private DialogActionBottom mOperatePhotoDialogActionBottom;
+    //创建集合，用于保存"操作图片"底部弹出框中的item
+    private ArrayList<String> mOpDialogList = new ArrayList<>();
+    //定义标识符，用于保存"操作图片"的时候点击的图片position
+    private int flag_click_photo = -1;
 
     @Override
     public void dobeforeSetContentView() {
@@ -94,6 +108,8 @@ public class PublishTaskActivity extends BaseActivity<PublishTaskPresenter> impl
         initDialogActionBottom();
         //调用方法，初始化RecycleView
         initRecycleView();
+        //调用方法，初始化"操作图片"底部弹出框
+        initOperateDialogActionBottom();
     }
 
     @Override
@@ -146,6 +162,41 @@ public class PublishTaskActivity extends BaseActivity<PublishTaskPresenter> impl
     }
 
     /**
+     * 初始化"操作图片"底部弹出框
+     */
+    private void initOperateDialogActionBottom() {
+        //创建实例
+        mOperatePhotoDialogActionBottom = new DialogActionBottom(this);
+        //设置item字体的颜色
+        mOperatePhotoDialogActionBottom.setItemTextColor(android.R.color.background_dark);
+        //设置底部弹出框数据
+        mOpDialogList.add("预览");
+        mOpDialogList.add("删除");
+        mOperatePhotoDialogActionBottom.setDataList(mOpDialogList);
+        //监听
+        mOperatePhotoDialogActionBottom.setOnItemListener(new DialogActionBottom.OnItemListener() {
+            @Override
+            public void onItemClick(Button button, int position) {
+                //取消
+                if (position==DialogActionBottom.CANCLE){
+                    Log.e("TAG","取消");
+                }else if (position==0){  //预览
+                    Log.e("TAG","预览");
+                    //TODO
+                }else if (position==1){  //删除
+                    Log.e("TAG","删除");
+                    if (flag_click_photo!=-1){
+                        mPhotoList.remove(flag_click_photo);
+                        mAdapter.setNewData(mPhotoList);
+                    }
+                    mOperatePhotoDialogActionBottom.dismiss();
+                }
+            }
+        });
+
+    }
+
+    /**
      * 初始化"添加图片"底部弹出框
      */
     private void initDialogActionBottom() {
@@ -166,17 +217,17 @@ public class PublishTaskActivity extends BaseActivity<PublishTaskPresenter> impl
                     //隐藏底部弹出框
                     mAddPhotoDialogActionBottom.dismiss();
                 } else if (position == 0) {
-                    if (mPhotoList.size() >= 9) {
+                    if (mPhotoList.size() > 9) {
                         ToastUtils.showShort("已达到最大数量");
                     } else {
                         mPresenter.selectPhotoFromCamera();
                         mAddPhotoDialogActionBottom.dismiss();
                     }
                 } else if (position == 1) {
-                    if (mPhotoList.size() >= 9) {
+                    if (mPhotoList.size() > 9) {
                         ToastUtils.showShort("已达到最大数量");
                     } else {
-                        mPresenter.selectPhotoFromAlbum(9 - mPhotoList.size());
+                        mPresenter.selectPhotoFromAlbum(10 - mPhotoList.size());
                         mAddPhotoDialogActionBottom.dismiss();
                     }
                 }
@@ -188,13 +239,54 @@ public class PublishTaskActivity extends BaseActivity<PublishTaskPresenter> impl
      * 初始化RecycleView
      */
     private void initRecycleView() {
+        //设置布局管理器
+        mRecycleView.setLayoutManager(new GridLayoutManager(this, 3));
+        //创建适配器实例
+        mAdapter = new PublishTaskUploadPhotoAdapter(this, mPhotoList);
+        //设置适配器
+        mRecycleView.setAdapter(mAdapter);
+
+        //监听RecycleView的item
+        mAdapter.addOnClickListener(new PublishTaskUploadPhotoAdapter.OnClickListenerRecycleView() {
+            @Override
+            public void onClick(List<PhotoInfo> list, int position) {
+                if (list.size() <= 9 && position == list.size() - 1) {
+                    mAddPhotoDialogActionBottom.show();
+                } else {
+                    flag_click_photo = position;
+                    mOperatePhotoDialogActionBottom.show();
+                }
+            }
+        });
 
     }
 
     @Override
     public void setSelectPhoto(List<PhotoInfo> list) {
+        //如果list的值大于0，就证明已经添加了图片，所以需要先将"＋"号drawable清除，下面再添加，保证该图片在最后
+        if (mPhotoList.size() > 0) {
+            mPhotoList.remove(mPhotoList.size() - 1);
+        }
+        //循环将选中的图片添加到集合中
         for (PhotoInfo info : list) {
             mPhotoList.add(info);
+        }
+        //判断集合是否为空
+        if (mPhotoList != null) {
+            //隐藏默认状态下的drawable
+            mAddPhotoTextView.setVisibility(View.GONE);
+            mImgAddPhoto.setVisibility(View.GONE);
+            mRecycleView.setVisibility(View.VISIBLE);
+
+            //如果图片的数量小于9，那么就需要在集合中加上"＋"号的图片，以便于继续添加
+            if (mPhotoList.size() < 10) {
+                PhotoInfo info = new PhotoInfo();
+                info.setPhotoPath("1");
+                mPhotoList.add(info);
+                mAdapter.setNewData(mPhotoList);
+            } else {
+                mAdapter.setNewData(mPhotoList);
+            }
         }
     }
 

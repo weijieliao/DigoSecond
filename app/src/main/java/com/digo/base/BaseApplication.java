@@ -34,7 +34,6 @@ public class BaseApplication extends Application{
 
         //开启log日志输出
         LogUtil.setIsOutput( true ) ;
-<<<<<<< HEAD
         HttpManager.initOkHttpClient(new OkHttpClient.Builder());
         //初始化相册
         initGalleryFinal();
@@ -70,10 +69,8 @@ public class BaseApplication extends Application{
                 .setFunctionConfig(function).build();
 
         GalleryFinal.init(coreConfig);
-=======
         //初始化fresco
         Fresco.initialize(this);
->>>>>>> e14f126e8c0fefb6bb9dc17701014ee683116535
 
     }
 

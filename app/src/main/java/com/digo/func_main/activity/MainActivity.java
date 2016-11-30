@@ -9,13 +9,10 @@ import android.graphics.drawable.Drawable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-<<<<<<< HEAD
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.KeyEvent;
-=======
 import android.util.Log;
->>>>>>> e14f126e8c0fefb6bb9dc17701014ee683116535
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
@@ -34,19 +31,16 @@ import com.digo.func_main.fragment.SquareFragment;
 import com.digo.func_main.model.MainAtyModel;
 import com.digo.func_main.presenter.MainAtyPresenter;
 import com.digo.func_main.view_infc.MainAtyView;
-<<<<<<< HEAD
 import com.digo.utils.AESMall;
 import com.digo.utils.AnimationUtils;
 import com.digo.utils.ViewUtils;
 import com.example.lwj.digosecond.R;
 
 import java.io.UnsupportedEncodingException;
-=======
 import com.digo.utils.LogUtil;
 import com.example.lwj.digosecond.R;
 
 import java.lang.reflect.Method;
->>>>>>> e14f126e8c0fefb6bb9dc17701014ee683116535
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -68,7 +62,6 @@ public class MainActivity extends BaseActivity<MainAtyPresenter> implements Main
     TextView tvSquare;
     @Bind(R.id.tv_my)
     TextView tvMy;
-<<<<<<< HEAD
     @Bind(R.id.ry_add)
     RelativeLayout ryAdd;
     @Bind(R.id.iv_inhere_icon)
@@ -84,29 +77,19 @@ public class MainActivity extends BaseActivity<MainAtyPresenter> implements Main
     @Bind(R.id.ly_type_inhere)
     LinearLayout lyTypeInhere;
 
-=======
->>>>>>> e14f126e8c0fefb6bb9dc17701014ee683116535
 
     private SquareFragment squareFragment = new SquareFragment();
     private MyFragment myFragment = new MyFragment();
     private List<Fragment> frgList = new ArrayList<>();
     private List<TextView> iconList = new ArrayList<>();
     private int[] navDraIdNormal = {R.drawable.tab_discover_nor, R.drawable.tab_my_nor};
-<<<<<<< HEAD
-    private int[] navDraIdSelected = {R.drawable.tab_discover_press, R.drawable
-            .tab_my_press};
-=======
     private int[] navDraIdSelected = {R.drawable.tab_discover_press, R.drawable.tab_my_press};
->>>>>>> e14f126e8c0fefb6bb9dc17701014ee683116535
     private int[] iconIds = {R.id.tv_square, R.id.tv_my};
     private int navTextColorNormal;
     private int navTextColorSelected;
     private int currFrgIndex = 0;
-<<<<<<< HEAD
     //定义标识，用于判断返回键的特殊情况
     private boolean isOpenAdd = false;
-=======
->>>>>>> e14f126e8c0fefb6bb9dc17701014ee683116535
 
     @Override
     public void dobeforeSetContentView() {
@@ -134,10 +117,6 @@ public class MainActivity extends BaseActivity<MainAtyPresenter> implements Main
 
     @Override
     public void initData() {
-<<<<<<< HEAD
-=======
-
->>>>>>> e14f126e8c0fefb6bb9dc17701014ee683116535
         navTextColorNormal = getResources().getColor(R.color.black);
         navTextColorSelected = getResources().getColor(R.color.orange);
 
@@ -219,12 +198,9 @@ public class MainActivity extends BaseActivity<MainAtyPresenter> implements Main
                 ft.show(frgList.get(i));
             }
             tv.setTextColor(textColor);
-<<<<<<< HEAD
             drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable
                     .getMinimumHeight());
-=======
             drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
->>>>>>> e14f126e8c0fefb6bb9dc17701014ee683116535
             tv.setCompoundDrawables(null, drawable, null, null);
             i++;
         }

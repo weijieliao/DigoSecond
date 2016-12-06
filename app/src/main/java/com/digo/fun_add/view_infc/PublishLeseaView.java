@@ -1,0 +1,17 @@
+package com.digo.fun_add.view_infc;
+
+import com.digo.base.BaseView;
+
+import java.util.List;
+
+import cn.finalteam.galleryfinal.model.PhotoInfo;
+
+/**
+ * "发布租借"View
+ * @author chenh
+ */
+
+public interface PublishLeseaView extends BaseView{
+
+    void setSelectPhoto(List<PhotoInfo> list);
+}

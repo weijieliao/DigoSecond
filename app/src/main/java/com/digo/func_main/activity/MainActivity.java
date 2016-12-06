@@ -261,18 +261,15 @@ public class MainActivity extends BaseActivity<MainAtyPresenter> implements Main
                 break;
             //"任务"LinearLayout点击事件
             case R.id.ly_opinion_task:
-                Toast.makeText(this, "任务", Toast.LENGTH_SHORT).show();
                 toTaskAty(it);
                 onTask();
                 break;
             //"话题"LinearLayout点击事件
             case R.id.ly_opinion_topic:
-                Toast.makeText(this, "话题", Toast.LENGTH_SHORT).show();
                 toTopicAty(it);
                 break;
             //"租借"LinearLayout点击事件
             case R.id.ly_opinion_loan:
-                Toast.makeText(this, "租借", Toast.LENGTH_SHORT).show();
                 toLeseaAty(it);
                 break;
 

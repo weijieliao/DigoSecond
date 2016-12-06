@@ -1,24 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_publish_content"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bg_publish"
     tools:context="com.digo.fun_add.activity.PublishTaskActivity">
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_49"
                 android:background="@android:color/white"
                 android:orientation="horizontal">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -27,7 +30,8 @@
                     android:layout_marginLeft="@dimen/dp_15"
                     android:text="@string/str_task_title"
                     android:textColor="@color/text_inhere"
-                    android:textSize="@dimen/sp_15"/>
+                    android:textSize="@dimen/sp_15" />
+
                 <EditText
                     android:id="@+id/et_task_name"
                     android:layout_width="0dp"
@@ -35,21 +39,25 @@
                     android:layout_gravity="bottom"
                     android:layout_weight="1"
                     android:background="@null"
-                    android:textCursorDrawable="@drawable/et_cursor_color"
                     android:hint="@string/str_title_hint"
                     android:paddingBottom="@dimen/dp_3"
                     android:textColor="@color/et_hint"
-                    android:textSize="@dimen/sp_14"/>
+                    android:textCursorDrawable="@drawable/et_cursor_color"
+                    android:textSize="@dimen/sp_14" />
             </LinearLayout>
-            <View android:layout_width="match_parent"
-                  android:layout_height="0.5dp"
-                  android:layout_marginLeft="@dimen/dp_15"
-                  android:background="@color/bg_item_press"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="@dimen/dp_15"
+                android:background="@color/bg_item_press" />
+
             <RelativeLayout
                 android:id="@+id/ry_start_time"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_49"
                 android:background="@drawable/bg_item">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -59,7 +67,8 @@
                     android:layout_marginLeft="@dimen/dp_15"
                     android:text="@string/str_start_time"
                     android:textColor="@color/text_inhere"
-                    android:textSize="@dimen/sp_15"/>
+                    android:textSize="@dimen/sp_15" />
+
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -67,17 +76,21 @@
                     android:layout_centerVertical="true"
                     android:layout_marginRight="@dimen/dp_15"
                     android:background="@color/bg_publish"
-                    android:src="@drawable/global_arrow"/>
+                    android:src="@drawable/global_arrow" />
             </RelativeLayout>
-            <View android:layout_width="match_parent"
-                  android:layout_height="0.5dp"
-                  android:layout_marginLeft="@dimen/dp_15"
-                  android:background="@color/bg_item_press"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="@dimen/dp_15"
+                android:background="@color/bg_item_press" />
+
             <RelativeLayout
                 android:id="@+id/ry_end_time"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_49"
                 android:background="@drawable/bg_item">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -87,24 +100,29 @@
                     android:layout_marginLeft="@dimen/dp_15"
                     android:text="@string/str_end_time"
                     android:textColor="@color/text_inhere"
-                    android:textSize="@dimen/sp_15"/>
+                    android:textSize="@dimen/sp_15" />
+
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:layout_marginRight="@dimen/dp_15"
-                    android:src="@drawable/global_arrow"/>
+                    android:src="@drawable/global_arrow" />
             </RelativeLayout>
-            <View android:layout_width="match_parent"
-                  android:layout_height="0.5dp"
-                  android:layout_marginLeft="@dimen/dp_15"
-                  android:background="@color/bg_item_press"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="@dimen/dp_15"
+                android:background="@color/bg_item_press" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_49"
                 android:background="@android:color/white"
                 android:orientation="horizontal">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -113,22 +131,27 @@
                     android:layout_marginLeft="@dimen/dp_15"
                     android:text="@string/str_task_address"
                     android:textColor="@color/text_inhere"
-                    android:textSize="@dimen/sp_15"/>
+                    android:textSize="@dimen/sp_15" />
+
                 <EditText
+                    android:id="@+id/et_task_address"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="bottom"
                     android:layout_weight="1"
-                    android:textCursorDrawable="@drawable/et_cursor_color"
                     android:background="@null"
                     android:paddingBottom="@dimen/dp_3"
                     android:textColor="@color/et_hint"
-                    android:textSize="@dimen/sp_14"/>
+                    android:textCursorDrawable="@drawable/et_cursor_color"
+                    android:textSize="@dimen/sp_14" />
             </LinearLayout>
-            <View android:layout_width="match_parent"
-                  android:layout_height="0.5dp"
-                  android:layout_marginLeft="@dimen/dp_15"
-                  android:background="@color/bg_item_press"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="@dimen/dp_15"
+                android:background="@color/bg_item_press" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -136,6 +159,7 @@
                 android:orientation="horizontal"
                 android:paddingBottom="@dimen/dp_12"
                 android:paddingTop="@dimen/dp_25">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -143,16 +167,19 @@
                     android:layout_marginLeft="@dimen/dp_15"
                     android:text="相关图片："
                     android:textColor="@color/text_inhere"
-                    android:textSize="@dimen/sp_15"/>
+                    android:textSize="@dimen/sp_15" />
+
                 <FrameLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1">
+
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/dp_15"
                         android:orientation="horizontal">
+
                         <android.support.v7.widget.RecyclerView
                             android:id="@+id/recycleview_publish_task"
                             android:layout_width="wrap_content"
@@ -160,6 +187,7 @@
                             android:visibility="gone">
 
                         </android.support.v7.widget.RecyclerView>
+
                         <TextView
                             android:id="@+id/tv_publish_task_add_photo"
                             android:layout_width="60dp"
@@ -167,43 +195,49 @@
                             android:background="@color/bg_item_press"
                             android:gravity="center"
                             android:text="添加\n图片"
-                            android:visibility="visible"
-                            android:textColor="@color/text_color_666"/>
+                            android:textColor="@color/text_color_666"
+                            android:visibility="visible" />
+
                         <ImageView
                             android:id="@+id/iv_add_photo"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="@dimen/dp_12"
-                            android:src="@drawable/options_add_defaut"/>
+                            android:src="@drawable/options_add_defaut" />
                     </LinearLayout>
 
                 </FrameLayout>
             </LinearLayout>
-            <View android:layout_width="match_parent"
-                  android:layout_height="0.5dp"
-                  android:layout_marginLeft="@dimen/dp_15"
-                  android:background="@color/bg_item_press"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="@dimen/dp_15"
+                android:background="@color/bg_item_press" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="200dp"
-                android:paddingBottom="@dimen/dp_40"
                 android:background="@android:color/white"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/dp_40">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/dp_15"
                     android:text="@string/str_task_describtion"
                     android:textColor="@color/text_inhere"
-                    android:textSize="@dimen/sp_15"/>
+                    android:textSize="@dimen/sp_15" />
+
                 <EditText
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textCursorDrawable="@drawable/et_cursor_color"
                     android:background="@null"
-                    android:lines="5"/>
+                    android:lines="5"
+                    android:textCursorDrawable="@drawable/et_cursor_color" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
@@ -217,5 +251,5 @@
         android:gravity="center"
         android:text="@string/str_publish_task"
         android:textColor="@color/text_publish"
-        android:textSize="@dimen/sp_18"/>
+        android:textSize="@dimen/sp_18" />
 </RelativeLayout>

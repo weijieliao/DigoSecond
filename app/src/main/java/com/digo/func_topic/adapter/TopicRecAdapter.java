@@ -1,26 +1,19 @@
-package com.digo.func_task.adapter;
+package com.digo.func_topic.adapter;
 
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Point;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.GridLayout;
-import android.widget.GridView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.digo.func_task.bean.TaskRecItemBean;
+import com.digo.func_topic.bean.TopicRecItemBean;
 import com.digo.utils.LogUtil;
 import com.example.lwj.digosecond.R;
-import com.facebook.drawee.generic.GenericDraweeHierarchy;
-import com.facebook.drawee.generic.GenericDraweeHierarchyBuilder;
 import com.facebook.drawee.view.SimpleDraweeView;
 
 import java.util.List;
@@ -29,15 +22,15 @@ import java.util.List;
  * Created by weijieliao on 2016/11/15.
  */
 
-public class TaskRecAdapter extends RecyclerView.Adapter<TaskRecAdapter.TaskRecViewHolder> {
+public class TopicRecAdapter extends RecyclerView.Adapter<TopicRecAdapter.TopicRecViewHolder> {
 
     private Context context ;
-    private List<TaskRecItemBean> dataList ;
+    private List<TopicRecItemBean> dataList ;
 
     private int screenWidth ;
 //    private int screenHeight ;
 
-    public TaskRecAdapter(Context context,List<TaskRecItemBean> dataList){
+    public TopicRecAdapter(Context context, List<TopicRecItemBean> dataList){
         this.context = context ;
         this.dataList = dataList ;
         Point point = new Point() ;
@@ -46,38 +39,37 @@ public class TaskRecAdapter extends RecyclerView.Adapter<TaskRecAdapter.TaskRecV
     }
 
     @Override
-    public TaskRecViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public TopicRecViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        int layoutResId = R.layout.item_task ;
+        int layoutResId = R.layout.item_topic ;
         switch( viewType ){
-            case TaskRecItemBean.ITEM_TYPE_ITEM :
-                layoutResId = R.layout.item_task ;
+            case TopicRecItemBean.ITEM_TYPE_ITEM :
+                layoutResId = R.layout.item_topic ;
                 break ;
-            case TaskRecItemBean.ITEM_TYPE_EMPTY_TIP :
-                layoutResId = R.layout.item_task_empty_tip ;
+            case TopicRecItemBean.ITEM_TYPE_EMPTY_TIP :
+                layoutResId = R.layout.item_topic_empty_tip ;
                 break ;
-            case TaskRecItemBean.ITEM_TYPE_LOAD_MORE :
-                layoutResId = R.layout.item_task_load_more ;
+            case TopicRecItemBean.ITEM_TYPE_LOAD_MORE :
+                layoutResId = R.layout.item_topic_load_more ;
                 break ;
             default : break ;
         }
-        TaskRecViewHolder holder = new TaskRecViewHolder(LayoutInflater.from( context ).inflate(
+        TopicRecViewHolder holder = new TopicRecViewHolder(LayoutInflater.from( context ).inflate(
                 layoutResId , parent , false ) , viewType ) ;
 
         return holder ;
     }
 
     @Override
-    public void onBindViewHolder(TaskRecViewHolder holder, int position) {
+    public void onBindViewHolder(TopicRecViewHolder holder, int position) {
 
         switch( dataList.get( position ).getItemType() ){
-            case TaskRecItemBean.ITEM_TYPE_ITEM :
+            case TopicRecItemBean.ITEM_TYPE_ITEM :
                 holder.sdvPortrait.setImageURI( dataList.get( position ).getPortraitUrl() ) ;
                 holder.tvUsername.setText( dataList.get( position ).getUsername() ) ;
-                holder.tvReward.setText( dataList.get( position ).getReward() ) ;
+                holder.tvPublishTime.setText( dataList.get( position ).getPublishTime() ) ;
                 holder.tvTextContent.setText( dataList.get( position ).getTextContent() ) ;
                 holder.glPictures.removeAllViews() ;
-                holder.tvPublishTime.setText( dataList.get( position ).getPublishTime() ) ;
                 int picWidth = 0 ;
                 List<String> list = dataList.get( position ).getSmallMapUrlList() ;
                 if( null != list && list.size() != 0 ){
@@ -93,11 +85,11 @@ public class TaskRecAdapter extends RecyclerView.Adapter<TaskRecAdapter.TaskRecV
                     }
                 }
                 break ;
-            case TaskRecItemBean.ITEM_TYPE_EMPTY_TIP :
+            case TopicRecItemBean.ITEM_TYPE_EMPTY_TIP :
                 holder.tvPulish.setOnClickListener( new OnPulishBtnClickListener() ) ;
                 break ;
-            case TaskRecItemBean.ITEM_TYPE_LOAD_MORE :
-//                LogUtil.logI( TaskRecAdapter.this , "****1" ) ;
+            case TopicRecItemBean.ITEM_TYPE_LOAD_MORE :
+                LogUtil.logI( TopicRecAdapter.this , "****1" ) ;
                 break ;
             default : break ;
         }
@@ -130,65 +122,62 @@ public class TaskRecAdapter extends RecyclerView.Adapter<TaskRecAdapter.TaskRecV
         return dataList.size() ;
     }
 
-    class TaskRecViewHolder extends RecyclerView.ViewHolder{
+    class TopicRecViewHolder extends RecyclerView.ViewHolder{
 
         //item
         private SimpleDraweeView sdvPortrait ;
         private TextView tvUsername ;
-        private TextView tvReward ;
+        private TextView tvPublishTime ;
         private TextView tvTextContent ;
         private GridLayout glPictures ;
-        private TextView tvPublishTime ;
 
         //emptyTip
         private TextView tvPulish ;
 
-        public TaskRecViewHolder(View itemView , int viewType ) {
+        public TopicRecViewHolder(View itemView , int viewType ) {
             super(itemView);
-//            setViewNull() ;
+            setViewNull() ;
             switch( viewType ){
-                case TaskRecItemBean.ITEM_TYPE_ITEM :
+                case TopicRecItemBean.ITEM_TYPE_ITEM :
                     sdvPortrait = ( SimpleDraweeView )itemView.findViewById( R.id.sdv_portrait ) ;
                     tvUsername = ( TextView )itemView.findViewById( R.id.tv_username ) ;
-                    tvReward = ( TextView )itemView.findViewById( R.id.tv_reward_2 ) ;
+                    tvPublishTime = ( TextView )itemView.findViewById( R.id.tv_publish_time ) ;
                     tvTextContent = ( TextView )itemView.findViewById( R.id.tv_text_content ) ;
                     glPictures = ( GridLayout )itemView.findViewById( R.id.gl_pictures ) ;
-                    tvPublishTime = ( TextView )itemView.findViewById( R.id.tv_publish_time ) ;
                     break ;
-                case TaskRecItemBean.ITEM_TYPE_EMPTY_TIP :
+                case TopicRecItemBean.ITEM_TYPE_EMPTY_TIP :
                     tvPulish = ( TextView )itemView.findViewById( R.id.tv_pulish ) ;
                     break ;
-                case TaskRecItemBean.ITEM_TYPE_LOAD_MORE :
-//                    LogUtil.logI( TaskRecAdapter.this , "***2" ) ;
+                case TopicRecItemBean.ITEM_TYPE_LOAD_MORE :
+                    LogUtil.logI( TopicRecAdapter.this , "***2" ) ;
                     break ;
                 default : break ;
             }
         }
 
-//        private void setViewNull() {
-//
-//            sdvPortrait = null ;
-//            tvUsername = null ;
-//            tvReward = null ;
-//            tvTextContent = null ;
-//            glPictures = null ;
-//            tvPublishTime = null ;
-//
-//        }
+        private void setViewNull() {
+
+            sdvPortrait = null ;
+            tvUsername = null ;
+            tvPublishTime = null ;
+            tvTextContent = null ;
+            glPictures = null ;
+
+        }
 
     }
 
     class OnPulishBtnClickListener implements View.OnClickListener {
         @Override
         public void onClick(View v) {
-            LogUtil.logI( TaskRecAdapter.this , "publish button click" ) ;
+            LogUtil.logI( TopicRecAdapter.this , "publish button click" ) ;
         }
     }
 
     class OnPicClickListener implements View.OnClickListener{
         @Override
         public void onClick(View v) {
-            LogUtil.logI( TaskRecAdapter.this , "onPicClick" ) ;
+            LogUtil.logI( TopicRecAdapter.this , "onPicClick" ) ;
         }
     }
 

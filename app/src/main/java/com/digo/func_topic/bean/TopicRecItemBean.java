@@ -1,4 +1,4 @@
-package com.digo.func_task.bean;
+package com.digo.func_topic.bean;
 
 import java.util.List;
 
@@ -6,7 +6,7 @@ import java.util.List;
  * Created by weijieliao on 2016/11/15.
  */
 
-public class TaskRecItemBean {
+public class TopicRecItemBean {
 
     /**
      * 类型：头部、尾部、元素、空提示
@@ -20,13 +20,14 @@ public class TaskRecItemBean {
     private int itemType ;
     private String portraitUrl ;
     private String username ;
-    private String reward ;
-    private String textContent ;
     private String publishTime ;
+    private String textContent ;
     //图片url列表
     private List<String> picUrlList ;
     //缩略图url列表
     private List<String> smallMapUrlList ;
+    private int shareNum ;
+    private int commentNum ;
     private int supportNum ;
 
     public int getItemType() {
@@ -85,12 +86,20 @@ public class TaskRecItemBean {
         this.smallMapUrlList = smallMapUrlList;
     }
 
-    public String getReward() {
-        return reward;
+    public int getShareNum() {
+        return shareNum;
     }
 
-    public void setReward(String reward) {
-        this.reward = reward;
+    public void setShareNum(int shareNum) {
+        this.shareNum = shareNum;
+    }
+
+    public int getCommentNum() {
+        return commentNum;
+    }
+
+    public void setCommentNum(int commentNum) {
+        this.commentNum = commentNum;
     }
 
     public int getSupportNum() {

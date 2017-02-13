@@ -56,6 +56,7 @@ public class TaskFragment extends BaseFragment<TaskFrgPresenter> implements Base
         bean.setItemType( TaskRecItemBean.ITEM_TYPE_ITEM ) ;
         bean.setPortraitUrl( "http://139.224.72.114/inhere/image/picture" ) ;
         bean.setUsername( "萌妹子" ) ;
+        bean.setReward( "5.00" ) ;
         bean.setPublishTime( "10分钟前" ) ;
         bean.setTextContent( "周末~ 吃！吃！吃！你们怎么过周末呀\uD83D\uDE01\uD83C\uDF39\uD83C\uDF3A…" ) ;
         List<String> piclist = new ArrayList<>() ;
@@ -76,6 +77,7 @@ public class TaskFragment extends BaseFragment<TaskFrgPresenter> implements Base
         bean.setItemType( TaskRecItemBean.ITEM_TYPE_ITEM ) ;
         bean.setPortraitUrl( "http://139.224.72.114/inhere/image/picture" ) ;
         bean.setUsername( "萌妹子" ) ;
+        bean.setReward( "5.00" ) ;
         bean.setPublishTime( "20分钟前" ) ;
         bean.setTextContent( "周末~ 吃！吃！吃！你们怎么过周末呀\uD83D\uDE01\uD83C\uDF39\uD83C\uDF3A…" ) ;
         piclist = new ArrayList<>() ;
@@ -94,6 +96,7 @@ public class TaskFragment extends BaseFragment<TaskFrgPresenter> implements Base
         bean.setItemType( TaskRecItemBean.ITEM_TYPE_ITEM ) ;
         bean.setPortraitUrl( "http://139.224.72.114/inhere/image/picture" ) ;
         bean.setUsername( "萌妹子" ) ;
+        bean.setReward( "5.00" ) ;
         bean.setPublishTime( "20分钟前" ) ;
         bean.setTextContent( "周末~ 吃！吃！吃！你们怎么过周末呀\uD83D\uDE01\uD83C\uDF39\uD83C\uDF3A…" ) ;
         piclist = new ArrayList<>() ;
@@ -108,6 +111,7 @@ public class TaskFragment extends BaseFragment<TaskFrgPresenter> implements Base
         bean.setItemType( TaskRecItemBean.ITEM_TYPE_ITEM ) ;
         bean.setPortraitUrl( "http://139.224.72.114/inhere/image/picture" ) ;
         bean.setUsername( "萌妹子" ) ;
+        bean.setReward( "5.00" ) ;
         bean.setPublishTime( "20分钟前" ) ;
         bean.setTextContent( "周末~ 吃！吃！吃！你们怎么过周末呀\uD83D\uDE01\uD83C\uDF39\uD83C\uDF3A…" ) ;
         piclist = new ArrayList<>() ;
@@ -121,6 +125,7 @@ public class TaskFragment extends BaseFragment<TaskFrgPresenter> implements Base
             bean.setItemType( TaskRecItemBean.ITEM_TYPE_ITEM ) ;
             bean.setPortraitUrl( "http://139.224.72.114/inhere/image/picture" ) ;
             bean.setUsername( "萌妹子" ) ;
+            bean.setReward( "5.00" ) ;
             bean.setPublishTime( "20分钟前" ) ;
             bean.setTextContent( "周末~ 吃！吃！吃！你们怎么过周末呀\uD83D\uDE01\uD83C\uDF39\uD83C\uDF3A…" ) ;
             piclist = new ArrayList<>() ;

@@ -40,6 +40,11 @@
     <string name="text_lease">租借</string>
     <string name="text_search">搜索</string>
     <string name="text_have_no_task">暂无任务</string>
+    <string name="text_have_no_topic">暂无话题</string>
+    <string name="text_have_no_lease">暂无租借</string>
     <string name="text_publish_task">发布任务</string>
+    <string name="text_publish_topic">发表话题</string>
+    <string name="text_publish_lease">发布租借</string>
     <string name="text_load_more">加载更多</string>
+    <string name="text_receive">赴约</string>
 </resources>
